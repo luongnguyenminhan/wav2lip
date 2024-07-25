@@ -11,3 +11,4 @@ __pycache__
 *.gif
 *.webm
 *.mp3
+.DS_Store

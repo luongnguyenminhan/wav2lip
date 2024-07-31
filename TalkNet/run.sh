@@ -5,19 +5,17 @@
 # Download video
 # video_link="https://drive.google.com/file/d/1kddSO1217sD42GZVH81IbjzGC7_Pptgh/view?usp=drive_link"
 # video_link="https://drive.google.com/file/d/1aA1w0YLdl6DAdzhI8v6q_bRFsVZ0J6Ul/view?usp=sharing" # videos
-video_link="https://drive.google.com/drive/folders/1003WP0yw3ZOJhjWK04QSSTj1TFW4BdX4?usp=sharing" # data
+video_link="https://drive.google.com/file/d/1iaOJXt-weJEMZg5vlO-S2MNBQRIk1B5f/view?usp=drive_link" # data
+name="data.zip"
 
-# gdown $video_link -O data
-# gdown --fuzzy $video_link -O $name
-# unzip -q $name
-# rm -rf __MACOSX
-# rm -rf "./$name/.DS_Store"
+gdown --fuzzy $video_link -O $name
+unzip -q $name
+rm -rf __MACOSX
+rm -rf "./$name/.DS_Store"
 
 data_folder="./data"
 raw_data="./raw_data"
 output_folder="./videos"  # Base name for the output folders
-
-gdown $video_link -O $data_folder --folder
 
 # Create the output folder if it doesn't exist
 mkdir -p "$output_folder"
@@ -42,7 +40,7 @@ done
 mv "$data_folder/*.mp4" $raw_data
 
 # move all pycrop
-video_outputs = ($(ls "$data_folder"))
+video_outputs=($(ls "$data_folder"))
 for video_output in "${video_outputs[@]}"; do
     # get video name
     # video_name="${video%.*}"

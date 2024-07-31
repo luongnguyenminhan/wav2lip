@@ -6,7 +6,7 @@
 # video_link="https://drive.google.com/file/d/1kddSO1217sD42GZVH81IbjzGC7_Pptgh/view?usp=drive_link"
 video_link="https://drive.google.com/file/d/1aA1w0YLdl6DAdzhI8v6q_bRFsVZ0J6Ul/view?usp=sharing"
 gdown --fuzzy $video_link -O videos.zip
-unzip videos.zip
+unzip -q videos.zip
 rm -rf __MACOSX
 rm -rf ./videos/.DS_Store
 

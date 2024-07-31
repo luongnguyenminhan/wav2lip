@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# https://github.com/luongnguyenminhan/wav2lip
+
 # Download video
 # video_link="https://drive.google.com/file/d/1kddSO1217sD42GZVH81IbjzGC7_Pptgh/view?usp=drive_link"
 video_link="https://drive.google.com/file/d/1aA1w0YLdl6DAdzhI8v6q_bRFsVZ0J6Ul/view?usp=sharing"

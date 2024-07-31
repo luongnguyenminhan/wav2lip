@@ -42,9 +42,8 @@ mv "$data_folder"/*.mp4 $raw_data
 # move all pycrop
 video_outputs=($(ls "$data_folder"/*/pycrop/))
 for video_output in "${video_outputs[@]}"; do
-    echo $video_output
     # get video name
-    # video_name="${video%.*}"
+    echo $video_output
 
     # echo "Preprocessing video: $video_name"
 

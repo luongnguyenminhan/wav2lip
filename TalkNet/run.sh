@@ -13,6 +13,9 @@ rm -rf ./videos/.DS_Store
 video_folder="videos"  # Replace with the path to your video folder
 output_folder="output_folder"  # Base name for the output folders
 
+# Create the output folder if it doesn't exist
+mkdir -p "$output_folder"
+
 # Get all video file names from the folder (remove extension if needed)
 video_files=($(ls "$video_folder"))
 
@@ -24,9 +27,6 @@ for video in "${video_files[@]}"; do
 
     # Run the processing command
     python ./demoTalkNet.py --videoFolder "$video_folder" --videoName "$video_name"
-    
-    # Create the output folder if it doesn't exist
-    mkdir -p "$output_folder"
 
     # Move .mp4 and .avi files from "pycrop" to the specific output folder
     for file in pycrop/*.{mp4,avi}; do

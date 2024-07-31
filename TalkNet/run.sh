@@ -4,20 +4,27 @@
 
 # Download video
 # video_link="https://drive.google.com/file/d/1kddSO1217sD42GZVH81IbjzGC7_Pptgh/view?usp=drive_link"
-video_link="https://drive.google.com/file/d/1aA1w0YLdl6DAdzhI8v6q_bRFsVZ0J6Ul/view?usp=sharing"
-gdown --fuzzy $video_link -O videos.zip
-unzip -q videos.zip
-rm -rf __MACOSX
-rm -rf ./videos/.DS_Store
+# video_link="https://drive.google.com/file/d/1aA1w0YLdl6DAdzhI8v6q_bRFsVZ0J6Ul/view?usp=sharing" # videos
+video_link="https://drive.google.com/drive/folders/1003WP0yw3ZOJhjWK04QSSTj1TFW4BdX4?usp=sharing" # data
 
-video_folder="videos"  # Replace with the path to your video folder
-output_folder="output_folder"  # Base name for the output folders
+# gdown $video_link -O data
+# gdown --fuzzy $video_link -O $name
+# unzip -q $name
+# rm -rf __MACOSX
+# rm -rf "./$name/.DS_Store"
+
+data_folder="./data"
+raw_data="./raw_data"
+output_folder="./videos"  # Base name for the output folders
+
+gdown $video_link -O $data_folder --folder
 
 # Create the output folder if it doesn't exist
 mkdir -p "$output_folder"
+mkdir -p "$raw_data"
 
 # Get all video file names from the folder (remove extension if needed)
-video_files=($(ls "$video_folder"))
+video_files=($(ls "$data_folder"))
 
 for video in "${video_files[@]}"; do
     # get video name
@@ -27,16 +34,23 @@ for video in "${video_files[@]}"; do
 
     # Run the processing command
     echo "****** Start detect talking face ******"
-    python ./demoTalkNet.py --videoFolder "$video_folder" --videoName "$video_name"
+    python ./demoTalkNet.py --videoFolder "$data_folder" --videoName "$video_name"
     echo "****** Done detect talking face ******"
-
-    # Move .mp4 and .avi files from "pycrop" to the specific output folder
-    echo "****** Start moving pycrop to output_folder ******"
-    for file in pycrop/*.{mp4,avi}; do
-        if [[ -f "$file" ]]; then  # Check if the file exists
-            mv "$file" "$output_folder/"
-        fi
-    done
-    echo "****** Done moving pycrop to output_folder ******"
 done
 
+# move file mp4 to other folder
+mv "$data_folder/*.mp4" $raw_data
+
+# move all pycrop
+video_outputs = ($(ls "$data_folder"))
+for video_output in "${video_outputs[@]}"; do
+    # get video name
+    # video_name="${video%.*}"
+
+    # echo "Preprocessing video: $video_name"
+
+    # Run the processing command
+    echo "****** Start Moving file ******"
+    mv "$data_folder/$video_output/pycrop/*.avi" $output_folder
+    echo "****** Done Moving file ******"
+done

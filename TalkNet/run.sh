@@ -19,13 +19,13 @@ for video in "${video_files[@]}"; do
     # echo "Preprocessing video: $video_name"
 
     # Run the processing command
-    python demoTalkNet.py --videoFolder "$video_folder" --videoName "$video_name"
+    python ./demoTalkNet.py --videoFolder "$video_folder" --videoName "$video_name"
     
     # Create the output folder if it doesn't exist
     mkdir -p "$output_folder"
 
     # Move .mp4 and .avi files from "pycrop" to the specific output folder
-    for file in pyavi/*.{mp4,avi}; do
+    for file in pycrop/*.{mp4,avi}; do
         if [[ -f "$file" ]]; then  # Check if the file exists
             mv "$file" "$output_folder/"
         fi

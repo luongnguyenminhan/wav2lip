@@ -26,13 +26,17 @@ for video in "${video_files[@]}"; do
     # echo "Preprocessing video: $video_name"
 
     # Run the processing command
+    echo "****** Start detect talking face ******"
     python ./demoTalkNet.py --videoFolder "$video_folder" --videoName "$video_name"
+    echo "****** Done detect talking face ******"
 
     # Move .mp4 and .avi files from "pycrop" to the specific output folder
+    echo "****** Start moving pycrop to output_folder ******"
     for file in pycrop/*.{mp4,avi}; do
         if [[ -f "$file" ]]; then  # Check if the file exists
             mv "$file" "$output_folder/"
         fi
     done
+    echo "****** Done moving pycrop to output_folder ******"
 done
 

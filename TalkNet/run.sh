@@ -7,6 +7,8 @@
 video_link="https://drive.google.com/file/d/1aA1w0YLdl6DAdzhI8v6q_bRFsVZ0J6Ul/view?usp=sharing"
 gdown --fuzzy $video_link -O videos.zip
 unzip videos.zip
+rm -rf __MACOSX
+rm -rf ./videos/.DS_Store
 
 video_folder="videos"  # Replace with the path to your video folder
 output_folder="output_folder"  # Base name for the output folders

@@ -49,6 +49,6 @@ for video_output in "${video_outputs[@]}"; do
 
     # Run the processing command
     echo "****** Start Moving file ******"
-    mv "$data_folder/$video_output"/pycrop/*.avi $output_folder
+    mv "$data_folder/$video_output/pycrop"/*.avi $output_folder
     echo "****** Done Moving file ******"
 done

@@ -28,27 +28,26 @@ for video in "${video_files[@]}"; do
     # get video name
     video_name="${video%.*}"
 
-    # echo "Preprocessing video: $video_name"
+    echo "Preprocessing video: $video_name"
 
     # Run the processing command
-    echo "****** Start detect talking face ******"
+    echo "****** Start detect talking face $video_name ******"
     python ./demoTalkNet.py --videoFolder "$data_folder" --videoName "$video_name"
-    echo "****** Done detect talking face ******"
+    echo "****** Done detect talking face $video_name ******"
 done
 
-# move file mp4 to other folder
-mv "$data_folder/*.mp4" $raw_data
+mv "$data_folder"/*.mp4 $raw_data
 
 # move all pycrop
-video_outputs=($(ls "$data_folder"))
+video_outputs=($(ls "$data_folder"/))
 for video_output in "${video_outputs[@]}"; do
     # get video name
-    # video_name="${video%.*}"
+    echo $video_output
 
     # echo "Preprocessing video: $video_name"
 
     # Run the processing command
     echo "****** Start Moving file ******"
-    mv "$data_folder/$video_output/pycrop/*.avi" $output_folder
+    mv $data_folder/$video_output/pycrop/*.avi $output_folder
     echo "****** Done Moving file ******"
 done

@@ -22,7 +22,7 @@ mkdir -p "$raw_data"
 mkdir -p "$output_folder"
 
 # Get all video file names from the folder (remove extension if needed)
-video_files=($(ls "$data_folder"))
+# video_files=($(ls "$data_folder"))
 
 # for video in "${video_files[@]}"; do
 #     # get video name

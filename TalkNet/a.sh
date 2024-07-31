@@ -40,7 +40,7 @@ mkdir -p "$output_folder"
 mv "$data_folder"/*.mp4 $raw_data
 
 # move all pycrop
-video_outputs=($(ls "$data_folder"/*/pycrop/))
+video_outputs=($(ls "$data_folder"/))
 for video_output in "${video_outputs[@]}"; do
     # get video name
     echo $video_output
@@ -49,7 +49,6 @@ for video_output in "${video_outputs[@]}"; do
 
     # Run the processing command
     echo "****** Start Moving file ******"
-    # mv $data_folder/$video_output/pycrop/*.avi $output_folder
-    mv $video_output $output_folder
+    mv $data_folder/$video_output/pycrop/*.avi $output_folder
     echo "****** Done Moving file ******"
 done

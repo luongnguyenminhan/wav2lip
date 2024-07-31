@@ -37,7 +37,7 @@ mkdir -p "$output_folder"
 # done
 
 # move file mp4 to other folder
-mv $data_folder/*.mp4 $raw_data
+mv "$data_folder"/*.mp4 $raw_data
 
 # move all pycrop
 video_outputs=($(ls "$data_folder"))

@@ -15,7 +15,7 @@ name="data.zip"
 
 data_folder="data"
 raw_data="raw_data"
-output_folder="videos"  # Base name for the output folders
+output_folder="videos_1"  # Base name for the output folders
 
 # Create the output folder if it doesn't exist
 mkdir -p "$raw_data"
@@ -49,6 +49,7 @@ for video_output in "${video_outputs[@]}"; do
 
     # Run the processing command
     echo "****** Start Moving file ******"
-    mv $data_folder/$video_output/pycrop/*.avi $output_folder
+    # mv $data_folder/$video_output/pycrop/*.avi $output_folder
+    mv $data_folder/$video_output/pycrop/*.wav $output_folder
     echo "****** Done Moving file ******"
 done

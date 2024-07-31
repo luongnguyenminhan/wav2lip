@@ -5,7 +5,8 @@
 # Download video
 # video_link="https://drive.google.com/file/d/1kddSO1217sD42GZVH81IbjzGC7_Pptgh/view?usp=drive_link"
 # video_link="https://drive.google.com/file/d/1aA1w0YLdl6DAdzhI8v6q_bRFsVZ0J6Ul/view?usp=sharing" # videos
-video_link="https://drive.google.com/file/d/1iaOJXt-weJEMZg5vlO-S2MNBQRIk1B5f/view?usp=drive_link" # data
+# video_link="https://drive.google.com/file/d/1iaOJXt-weJEMZg5vlO-S2MNBQRIk1B5f/view?usp=drive_link" # data
+video_link="https://drive.google.com/file/d/1mbKfarkwWv0y14oqB9SfW4Lm-u-jfcjF/view?usp=sharing" # data 3
 name="data.zip"
 
 gdown --fuzzy $video_link -O $name

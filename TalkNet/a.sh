@@ -13,7 +13,7 @@ name="data.zip"
 # rm -rf __MACOSX
 # rm -rf "./$name/.DS_Store"
 
-# data_folder="./data"
+data_folder="./data"
 raw_data="./raw_data"
 output_folder="./videos"  # Base name for the output folders
 

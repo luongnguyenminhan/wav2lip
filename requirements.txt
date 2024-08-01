@@ -11,3 +11,6 @@ torchvision
 ffmpeg
 gdown
 youtube-dl
+librosa
+opencv-contrib-python>=4.2.0.34
+numba

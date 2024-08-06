@@ -11,8 +11,8 @@ video_link="https://drive.google.com/file/d/1mbKfarkwWv0y14oqB9SfW4Lm-u-jfcjF/vi
 name="data"
 
 gdown --fuzzy $video_link -O $name.zip
-# rm -rf data
-# unzip -q $name
+rm -rf data
+unzip -q $name
 rm -rf __MACOSX
 rm -rf "./$name/.DS_Store"
 

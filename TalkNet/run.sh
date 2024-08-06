@@ -23,6 +23,7 @@ output_folder="./videos"
 # Create the output folder if it doesn't exist
 mkdir -p "$output_folder"
 mkdir -p "$raw_data"
+mkdir -p "$data_folder"
 
 # Get all video file names from the folder (remove extension if needed)
 video_files=($(ls "$data_folder"))

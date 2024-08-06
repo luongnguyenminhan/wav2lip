@@ -10,7 +10,7 @@ video_link="https://drive.google.com/file/d/1mbKfarkwWv0y14oqB9SfW4Lm-u-jfcjF/vi
 # video_link="https://drive.google.com/file/d/1HscH8xDiUXfnSZteJ2Cq0rPhgkD79rk8/view?usp=drive_link" # data 4
 name="data"
 
-# gdown --fuzzy $video_link -O $name.zip
+gdown --fuzzy $video_link -O $name.zip
 # rm -rf data
 # unzip -q $name
 rm -rf __MACOSX
